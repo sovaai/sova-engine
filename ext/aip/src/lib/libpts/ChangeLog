@@ -1,0 +1,10 @@
+2008-03-20 swizard <me@swizard.info>
+
+	* Портирование на 64 бита: поправлена размерность переменных
+	* Портирование на 64 бита: ntohl/ntohs заменены на макросы из
+	sys/endian.h
+	* Портирование на 64 бита: sys/endian.h подперт на windows
+
+2003-12-15 Andrey L. Kalinin <andrey@kalinin.ru>
+
+	* Первый коммит pat_tree, pts. См. readme.

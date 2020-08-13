@@ -1,0 +1,71 @@
+BOOL Between( EXTENDED aArg, EXTENDED aLow, EXTENDED aHigh, ANY aAnswer ) [if([@Greater( "[$aArg]", "[$aLow]" )])]{[if([@Less( "[$aArg]", "[$aHigh]" )])]{[$aAnswer]}}
+
+BOOL DateBetween( EXTENDED aArg, EXTENDED aLow, EXTENDED aHigh, ANY aAnswer ) [if([@DateGreater( "[$aArg]", "[$aLow]" )])]{[if([@DateLess( "[$aArg]", "[$aHigh]" )])]{[$aAnswer]}}
+
+BOOL IsDoW( TEXT aDay ) [@IsEqual( "[@Extract( "[@Date()]", "%u" )]", "[$aDay]" )]
+
+BOOL IsDoM( TEXT aDay ) [@IsEqual( "[@Extract( "[@Date()]", "%d" )]", "[$aDay]" )]
+
+BOOL IsNotDoW( TEXT aDay ) [@IsNotEqual( "[@Extract( "[@Date()]", "%u")]", "[$aDay]" )]
+
+BOOL IsNotDoM( TEXT aDay ) [@IsNotEqual( "[@Extract( "[@Date()]", "%d")]", "[$aDay]" )]
+
+TEXT SetAlarm( EXTENDED aTime, EXTENDED aResult ) [if( [@TimeLess( "[@CalcTime("[$aTime]", "", "HIDE")]", "[@CalcTime("", "+0d", "HIDE")]")] )] { [ExtServiceCall( name="alarm" action="create" datetime="[@CalcTime("[$aTime]", "+1d", "")]" hardSet="true" cyclic="once")]{ [$aResult] } } [else] { [ExtServiceCall( name="alarm" action="create" datetime="[@CalcTime("[$aTime]", "+0d", "")]" hardSet="true" cyclic="once")]{ [$aResult] } }
+
+
+BOOL BigGreater( EXTENDED aArg1, EXTENDED aArg2 ) [@!BigGreater( "[@!s2n("[$aArg1]")]", "[@!s2n("[$aArg2]")]" )]
+
+BOOL BigLess( EXTENDED aArg1, EXTENDED aArg2 ) [@!BigLess( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]" )]
+
+BOOL Greater( EXTENDED aArg1, EXTENDED aArg2 ) [@!Greater( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]" )]
+
+BOOL Less( EXTENDED aArg1, EXTENDED aArg2 ) [@!Less( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]" )]
+
+
+TEXT Inc( VARIABLE aArg1, EXTENDED aArg2 = "1" ) [@!Inc( "[$aArg1]", "[@!s2n( "[$aArg2]" )]" )]
+
+TEXT Dec( VARIABLE aArg1, EXTENDED aArg2 = "1" ) [@!Dec( "[$aArg1]", "[@!s2n( "[$aArg2]" )]" )]
+
+
+TEXT Diff( EXTENDED aArg1, EXTENDED aArg2 ) [@!Diff( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]" )]
+
+
+TEXT Divide( EXTENDED aArg1, EXTENDED aArg2, TEXT aArg3 = "" ) [@!Divide( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]", "[$aArg3]" )]
+
+TEXT Multiply( EXTENDED aArg1, EXTENDED aArg2, TEXT aArg3 = "" ) [@!Multiply( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]", "[$aArg3]" )]
+
+TEXT Plus( EXTENDED aArg1, EXTENDED aArg2, TEXT aArg3 = "" ) [@!Plus( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]", "[$aArg3]" )]
+
+TEXT Minus( EXTENDED aArg1, EXTENDED aArg2, TEXT aArg3 = "" ) [@!Minus( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]", "[$aArg3]" )]
+
+TEXT Remainder( EXTENDED aArg1, EXTENDED aArg2 ) [@!Remainder( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]" )]
+
+
+TEXT m/( EXTENDED aArg1, EXTENDED aArg2, TEXT aArg3 = "" ) [@!m/( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]", "[$aArg3]" )]
+
+TEXT m*( EXTENDED aArg1, EXTENDED aArg2, TEXT aArg3 = "" ) [@!m*( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]", "[$aArg3]" )]
+
+TEXT m+( EXTENDED aArg1, EXTENDED aArg2, TEXT aArg3 = "" ) [@!m+( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]", "[$aArg3]" )]
+
+TEXT m-( EXTENDED aArg1, EXTENDED aArg2, TEXT aArg3 = "" ) [@!m-( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]", "[$aArg3]" )]
+
+TEXT m%( EXTENDED aArg1, EXTENDED aArg2 ) [@!m%( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]" )]
+
+
+TEXT Random( EXTENDED aArg1 = "1", EXTENDED aArg2 = "100" ) [@!Random( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]" )]
+
+TEXT rand( EXTENDED aArg1 = "1", EXTENDED aArg2 = "100" ) [@!rand( "[@!s2n( "[$aArg1]" )]", "[@!s2n( "[$aArg2]" )]" )]
+
+
+TEXT MeasConv( EXTENDED aFrom, EXTENDED aTo, EXTENDED aValue ) [@!MeasConv( "[$aFrom]", "[$aTo]", "[@!s2n( "[$aValue]" )]" )]
+
+TEXT Time( TEXT aDelimiter = ":" ) [@Date( "%H[$aDelimiter]%M" )]
+
+
+TEXT http( EXTENDED URL ) [@+( "http://", "[%hostname]", "[$URL]" )]
+
+TEXT https( EXTENDED URL ) [@+( "https://", "[%hostname]", "[$URL]" )]
+
+TEXT ftp( EXTENDED URL ) [@+( "ftp://", "[%hostname]", "[$URL]" )]
+
+TEXT mailto( EXTENDED URL ) [@+( "mailto://", "[%hostname]", "[$URL]" )]

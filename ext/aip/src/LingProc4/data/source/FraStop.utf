@@ -1,0 +1,176 @@
+﻿//-----------------------------------
+// артикли
+un
+une
+//des // однобукв. основа
+du
+//de // однобукв. основа
+//le // однобукв. основа
+//la // однобукв. основа
+//les // однобукв. основа
+//au // нулевая основа
+//aux // нулевая основа
+
+//-----------------------------------
+// местоимения
+
+// личные + притяжательные местоимения
+//je // однобукв. основа
+//tu // нет соотв. окончаний
+//il // нет соотв. окончаний
+elle
+//on // нулевая основа
+nous
+vous
+ils
+elles
+//me // однобукв. основа
+//te // однобукв. основа
+//se // однобукв. основа
+lui
+moi
+toi
+mon
+ton
+son
+//ma // однобукв. основа
+//ta // однобукв. основа
+//sa // однобукв. основа
+//mes // однобукв. основа
+//tes // однобукв. основа
+//ses // однобукв. основа
+notre
+votre
+nos
+vos
+leur
+leurs
+
+// указательные местоимения
+//ce // однобукв. основа
+cet
+cette
+//ces // однобукв. основа
+ceci
+cela
+//ça // однобукв. основа
+celui
+ceux
+celle
+celles
+// пониж. диакритики + рус. кодировка
+//ca // однобукв. основа
+//зa // однобукв. основа
+
+//-----------------------------------
+// показатели сравнительной степени
+plus
+moins
+aussi
+
+//-----------------------------------
+// служебные глаголы
+
+// глагол иметь
+avoir
+//ai // однобукв. основа
+//as // однобукв. основа
+//a // нулевая основа
+avons
+avez
+//ont // не надо - нет подходящих окончаний
+aurai
+auras
+aura
+aurons
+aurez
+auront
+eus
+eut
+eûmes
+eûtes
+eurent
+avais
+avait
+avaient
+aie
+aies
+//ait // однобукв. основа
+ayons
+ayez
+aient
+ayant
+// пониж. диакритики + рус. кодировка
+eumes
+eutes
+eûmes
+eûtes
+
+// глагол "быть"
+être
+suis
+//es // нулевая основа
+est
+sommes
+êtes
+sont
+serai
+seras
+sera
+serons
+serez
+seront
+fus
+fut
+fûmes
+fûtes
+furent
+été
+étant
+étais
+était
+étions
+étiez
+étaient
+sois
+soit
+soyons
+soyez
+soient
+// пониж. диакритики + рус. кодировка
+etes
+fumes
+futes
+ete
+etant
+etais
+etait
+etions
+etiez
+etaient
+
+//глаголы aller, venir
+aller
+vais
+vas
+//va // однобукв. основа
+allons
+allez
+vont
+
+venir
+viens
+vient
+venons
+venez
+viennent
+vins
+vint
+vînmes
+vintes
+vinrent
+
+// пониж. диакритика + рус. кодировка
+vinmes
+//vоnmes
+

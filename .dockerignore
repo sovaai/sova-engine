@@ -1,0 +1,10 @@
+/cmake-build*
+/dldata*
+/docker/dldata/dldata.ie2
+/.*
+
+.DS_Store
+
+/.idea
+
+Dockerfile

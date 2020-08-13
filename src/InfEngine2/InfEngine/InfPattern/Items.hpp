@@ -1,0 +1,31 @@
+#ifndef __InfPatternItems_hpp__
+#define __InfPatternItems_hpp__
+
+#include "Items/Text.hpp"
+#include "Items/TagDictInline.hpp"
+#include "Items/Br.hpp"
+#include "Items/TagInf.hpp"
+#include "Items/TagHref.hpp"
+#include "Items/TagDict.hpp"
+#include "Items/TagInstruct.hpp"
+#include "Items/TagVar.hpp"
+#include "Items/Star.hpp"
+#include "Items/EliStar.hpp"
+#include "Items/TagIf.hpp"
+#include "Items/TagSwitch.hpp"
+#include "Items/TagOpenWindow.hpp"
+#include "Items/Reference.hpp"
+#include "Items/EliReference.hpp"
+#include "Items/TagGetAnswer.hpp"
+#include "Items/TagFunction.hpp"
+#include "Items/TagRSS.hpp"
+#include "Items/Space.hpp"
+#include "Items/KeywordArgument.hpp"
+#include "Items/TagBreak.hpp"
+#include "Items/DictRef.hpp"
+#include "Items/TLCS.hpp"
+#include "Items/Nothing.hpp"
+#include "Items/Disableautovars.hpp"
+#include "Items/Lists.hpp"
+
+#endif /** __InfPatternItems_hpp__ */

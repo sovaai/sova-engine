@@ -1,0 +1,191 @@
+﻿//списки слов для определения испанского языка
+
+// глагол "быть"
+soy
+eres
+//es //м.б. омонимия
+somos
+//sois //фран.?
+//son //м.б. омонимия
+
+// глагол "находиться"
+estoy
+estás
+está
+estamos
+estáis
+están
+estuve
+estuviste
+estuvo
+estuvimos
+estuvisteis
+estuvieron
+esté
+estés
+estemos
+estéis
+estén
+estuviera
+estuvieras
+estuviéramos
+estuvierais
+estuvieran
+esta
+estad
+// пониж. диакритики и рус.кодировка
+estas
+esta
+estais
+estan
+este
+estes
+esteis
+esten
+estuvieramos
+// estбs
+// estб
+// estбis
+// estбn
+// estй
+// estйs
+// estйis
+// estйn
+// estuviйramos
+
+//глагол "иметь"
+//he //омонимия с англ.
+//has //омонимия с англ.
+//ha //сомнительное слово
+hemos
+habéis
+//han //сомнительное слово
+habré
+habrás
+habrá
+habremos
+habréis
+habrán
+hube
+hubiste
+hubo
+hubimos
+hubisteis
+hubieron
+haya
+hayas
+hayamos
+hayáis
+hayan
+hubiera
+hubieras
+hubiéramos
+hubierais
+hubieran
+habría
+habrías
+habríamos
+habrían
+// пониж. диакритики и рус.кодировка
+habre
+habeis
+habreis
+hubieramos
+habras
+habra
+habran
+hayais
+habria
+habrias
+habriamos
+habrian
+// habrй
+// habйis
+// habrйis
+// hubiйramos
+// habrбs
+// habrб
+// habrбn
+// hayбis
+// habrнa
+// habrнas
+// habrнamos
+// habrнan
+
+//местоимения
+aquel
+aquella
+aquellas
+aquello
+aquellos
+aqui
+cual
+cuales
+cuyo
+ella
+ellas
+ellos
+mio
+mios
+nosotros
+nuestra
+nuestras
+nuestro
+nuestros
+nunca
+quer
+quien
+quien
+quiero
+seu
+suya
+suyas
+suyo
+suyos
+toda
+todas
+todo
+todos
+tuya
+tuyas
+tuyo
+tuyos
+usted
+ustedes
+vosotros
+vuestra
+vuestras
+vuestro
+vuestros
+
+// предлоги
+sobre
+para
+por
+
+// другие служебные слова
+alguno
+bueno
+como
+mejor
+nada
+ninguno
+tampoco
+
+//частотные слова из писем
+clicar
+ola
+usuario
+caro
+caros
+amigo
+español
+espanol
+prezado
+prezados
+prezada
+senhor
+senhora
+senhores
+garantia
+abajo

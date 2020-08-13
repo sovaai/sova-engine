@@ -1,0 +1,71 @@
+Библиотека libpcommon.a - общие функции, поддержка кодировок и кириллицы.
+
+//////////////////////////////////////////////////////////////////////////////
+#include "CodePages.h"
+#include "Cp2Uni.h"
+
+Кодировки:
+#define CP_1251       1		// windows-1251
+#define CP_KOI8       2		// koi8-r
+#define CP_DOS        3		// cp866
+#define CP_MAC        4		// x-mac-cyrillic
+#define CP_ISO        5		// iso-8859-5
+#define CP_1252       6		// windows-1252
+#define CP_UTF_8      128	// utf-8
+
+
+// перекодировка
+// pData (in, out) - строка для перекодировки
+// nLen - ее длина (-1 = strlen(pData) )
+// nSourceCodePage -  кодировка на входе
+// nDestCodePage   - кодировка на выходе
+void ConvertData( unsigned char * pData, int nLen, int nSourceCodePage, int nDestCodePage );
+
+// по текстовой строке (koi/iso/dos/mac/win/utf-8/utf8)
+// дает численное значение кодировки (см. #define выше)
+int CPstr2i(const char* pszCP);
+
+// Обратное преобразование
+const char* CPi2str(int n);
+
+// по численному значению дает название по стандарту RFC (x-mac-cyrillic и т.п.)
+const char* CPi2strRFC(int n);
+
+
+// таблицы перекодироврк
+extern const wchar_16 tabWin2Usc[256];
+extern const wchar_16 tabKoi2Usc[256];
+extern const wchar_16 tabIso2Usc[256];
+extern const wchar_16 tabDos2Usc[256];
+extern const wchar_16 tabMac2Usc[256];
+extern const LPCSTR tabUsc2Win[256];
+extern const LPCSTR tabUsc2Koi[256];
+extern const LPCSTR tabUsc2Iso[256];
+extern const LPCSTR tabUsc2Dos[256];
+extern const LPCSTR tabUsc2Mac[256];
+extern const LPCSTR tabUsc2Lat1[256];
+extern const LPCSTR tabUsc2Lat1_cyr[256];
+
+// Таблица tabUsc2Lat1_cyr отличается от tabUsc2Lat1 тем, что 4-ю страницу UNICODE (русский)
+// отображает в соотв. диакритики ('ь' --> u umlaut)
+
+
+//////////////////////////////////////////////////////////////////////////////
+#include "koi8_ctype.h"
+
+Для кодировки KOI8-R сделана полная поддержка ctype 
+(макросы вида isupper/islower/toupper/tolower)
+и string-функций: strcmp, strcasecmp (Юникс-аналог stricmp),
+strlwr,strupr.
+
+Добавлена функция сравнения в TitleCase - она нужна для сортировки
+в алфавитном порядке с приоритетом капитализации:
+Aa,Ab,aB,ab
+
+Все макросы и функции имеют префикс koi8_*, если не определен STD_CTYPE,
+то проводится переопределение стандартных макросов isupper/islower...
+на их версию с поддержкой koi8.
+
+Чтобы меньше корежить исходники, заведен еще ctype.h, который включает 
+в себя koi8_ctype.h.
+

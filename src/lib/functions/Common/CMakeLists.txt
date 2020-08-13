@@ -1,0 +1,15 @@
+cmake_minimum_required( VERSION 2.6 )
+
+add_external_function( Common	AllTrim			AllTrim.cpp			MemoryAllocator		"" )
+add_external_function( Common	And				And.cpp				MemoryAllocator		"" )
+add_external_function( Common	Concatenate		Concatenate.cpp		MemoryAllocator		"" )
+add_external_function( Common	IsNum			IsNum.cpp			MemoryAllocator		"" )
+add_external_function( Common	Not				Not.cpp				MemoryAllocator		"" )
+add_external_function( Common	Or				Or.cpp				MemoryAllocator		"" )
+add_external_function( Common	ProperName		ProperName.cpp		MemoryAllocator		"" )
+add_external_function( Common	Replace			Replace.cpp			MemoryAllocator		"" )
+add_external_function( Common	Shuffle			Shuffle.cpp			MemoryAllocator		"" )
+add_external_function( Common	ToLower			ToLower.cpp			MemoryAllocator		"" )
+add_external_function( Common	ToUpper			ToUpper.cpp			MemoryAllocator		"" )
+
+set( DL_FUNCTIONS ${DL_FUNCTIONS} PARENT_SCOPE )

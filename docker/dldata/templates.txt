@@ -1,0 +1,6 @@
+BEGIN 1
+$ *
+# default
+# test
+END
+

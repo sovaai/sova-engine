@@ -1,0 +1,271 @@
+﻿// слова для определения французского языка
+
+//-----------------------------------
+// служебные глаголы
+// глагол "иметь"
+avoir
+//ai
+//as
+//a
+avons
+avez
+ont
+aurai
+auras
+//aura
+aurons
+aurez
+auront
+eus
+eut
+eûmes
+eûtes
+eurent
+avais
+avait
+avaient
+aie
+aies
+ait
+ayons
+ayez
+aient
+ayant
+// пониж. диакритики + рус. кодировка
+eumes
+eutes
+// eыmes
+// eыtes
+aimez
+allez
+etes
+faites
+pourra
+pouvez
+sommes
+
+// глагол "быть"
+être
+suis
+//es
+//est
+sommes
+êtes
+sont
+serai
+seras
+//sera
+serons
+serez
+seront
+//fus
+//fut
+fûmes
+fûtes
+furent
+été
+étant
+étais
+était
+étions
+étiez
+étaient
+sois
+soit
+soyons
+soyez
+soient
+// пониж. диакритики + рус. кодировка
+etre
+etes
+fumes
+futes
+//ete
+etant
+etais
+etait
+etions
+etiez
+etaient
+// кtre
+// кtes
+// fыmes
+// fыtes
+// йtй
+// йtant
+// йtais
+// йtait
+// йtions
+// йtiez
+// йtaient
+
+//глаголы aller, venir
+aller
+vais
+//vas
+//va
+allons
+allez
+vont
+
+venir
+viens
+vient
+venons
+venez
+viennent
+vins
+vint
+vînmes
+vintes
+vinrent
+
+// пониж. диакритика + рус. кодировка
+vinmes
+// vоnmes
+
+//-----------------------------------
+// сочетания с апострофом
+// с местоимение je
+j'ai
+j'avais
+j'aurais
+j'aie
+j'aurai
+j'eus
+j'irai
+j'allai
+j'aille
+
+// другие сочетания
+c'est
+
+// предлоги
+avec
+dans
+//pour // омонимия с англ.
+
+//-----------------------------------
+// местоимения и местоименные слова
+celui
+cette
+chaque
+nous
+tous
+votre
+vous
+
+// личные + притяжательные местоимения
+je // короткое, но очень показательное
+//tu // омонимия с др. языками
+//il // короткое слово
+elle
+//on // короткое слово
+nous
+vous
+ils
+elles
+//me // омонимия с др. языками
+//te // омонимия с др. языками
+//se // омонимия с др. языками
+lui
+//moi // омонимия с др. языками
+//toi // омонимия с др. языками
+//mon // омонимия с др. языками
+//ton // омонимия с др. языками
+//son // омонимия с др. языками
+//ma // короткое слово
+//ta // короткое слово
+//sa // короткое слово
+//mes // омонимия ?
+//tes // омонимия ?
+//ses // омонимия ?
+notre
+votre
+//nos // омонимия?
+//vos // омонимия?
+leur
+leurs
+
+// указательные местоимения
+//ce // короткое слово
+//cet // короткое слово
+cette
+//ces // короткое слово
+ceci
+cela
+ça // короткое, но показательное
+celui
+ceux
+celle
+celles
+// пониж. диакритики + рус. кодировка
+//ca // короткое слово
+//зa // короткое слово
+
+// относительные местоимения
+lequel
+auquel
+duquel
+laquelle
+lesquels
+auxquels
+desquels
+lesquelles
+auxquelles
+desquelles
+
+// неопределенные местоимения и прилагательные
+autres
+aucun
+aucune
+autre
+//certain // омонимия с англ.
+certaine
+chaque
+même
+plusieurs
+quelque
+quelques
+chacun
+chacune
+quelqu'un
+quelqu'une
+rien
+// рус. кодировка и пониженные диакритики
+meme
+// mкme
+
+//-----------------------------------
+// другие служебные слова
+oui
+voilà
+mème
+mèmes
+// рус. кодировка и пониженные диакритики
+voila
+// voilа // русск. буква
+meme
+memes
+// mиme
+// mиmes
+
+// частотные слова из писем
+bonjour
+cliquer
+gratuit
+gratuites
+jamais
+français
+// рус. кодировка и пониженные диакритики
+francais
+// franзais
+
+//-----------------------------------
+// артикли
+un
+une
+la
+le
+// les
+// des // путается с немецким

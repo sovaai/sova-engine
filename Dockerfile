@@ -14,6 +14,7 @@ RUN apt-get update && \
 						libmemcached-dev \
 						libreadline-dev \
 						libicu-dev \
+						openssh-server \
 						rsyslog && \
 	gdebi /deb/libinfengine-common-perl_0.1.6-1_all.deb -n && \
 	gdebi /deb/libinfengine-server-perl_0.2.3-1_all.deb -n && \
@@ -40,8 +41,9 @@ FROM engine-base-debian-10 as engine-server
 
 COPY --from=engine-compiler-10 /engine /engine
 COPY --from=engine-compiler-10 /src/docker/start.sh /scripts/
+ADD docker/syslog/rsyslog.conf /etc/rsyslog.conf
 
 RUN ln -s /engine /usr/local/InfEngine && \
-    sed -i '/imklog/s/^/#/' /etc/rsyslog.conf
+    ln -sf /dev/stdout /var/log/syslog
 
 CMD /scripts/start.sh || cat /usr/local/InfEngine/logs/InfEngine.log

@@ -1,19 +1,27 @@
-version: '3'
+version: '3.4'
+
+# Глобальная настрока логирования.
+x-logging:
+  &default-logging
+  options:
+    max-size: '100k'
+    max-file: '3'
+  driver: json-file
 
 services:
+# Кэш сервер для диалогового процессора.
   memcached.local:
     image: memcached
+    env_file:
+      - .env
+    restart: always
+    logging: *default-logging
   engine:
     build: .
+    env_file:
+      - .env
     environment:
-      - APS_MAX_FILTERS=1
-      - APS_START_FILTERS=0
-      - APS_MIN_FILTERS=0
-      - APS_LOG_LEVEL=4
-      - IFS_LOG_LEVEL=DEBUG
-      - IFS_LOG_DATA_FLOW=TRUE
       - IFS_CACHE_SERVERS=memcached.local:11211
-      - IFS_CACHE_TTL=604800
     ports:
       - 2255:2255
     volumes:

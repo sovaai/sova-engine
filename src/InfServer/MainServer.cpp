@@ -1000,7 +1000,7 @@ int main( int argc, char ** argv )
 	csAllocator.SetMemoryStep( 1024 * 1024 );
 
 	NanoLib::SysLogLogger Logger( "InfEngine Server" );
-	NanoLib::LogSystem::SetLogger( Logger, LSL_WARN );
+	NanoLib::LogSystem::SetLogger( Logger, LSL_INFO );
 
 	// Отключение сообщений от обшибках в getopt.
 	opterr = 0;
@@ -1370,20 +1370,34 @@ int main( int argc, char ** argv )
 	
 	// Разбор переменных окружения.
 	std::string eLogLevel{ getenv( "IFS_LOG_LEVEL" ) ?: "" };
-	if( !eLogLevel.empty() )
+	if( !eLogLevel.empty() ) {
 		cLogLevel = eLogLevel.c_str();
+		LogInfo( "Environment Config: IFS_LOG_LEVEL = %s", cLogLevel );
+	}
 	
 	std::string eLogDataFlow{ getenv( "IFS_LOG_DATA_FLOW" ) ?: "" };
-	if( !eLogDataFlow.empty() )
+	if( !eLogDataFlow.empty() ) {
 		cLogDataFlow = eLogDataFlow.c_str();
+		LogInfo( "Environment Config: IFS_LOG_DATA_FLOW = %s", cLogDataFlow );
+	}
 	
 	std::string eCacheServers{ getenv( "IFS_CACHE_SERVERS" ) ?: "" };
-	if( !eCacheServers.empty() )
+	if( !eCacheServers.empty() ) {
 		cCacheServers = eCacheServers.c_str();
+		LogInfo( "Environment Config: IFS_CACHE_SERVERS = %s", cCacheServers );
+	}
 	
 	std::string eCacheTTL{ getenv( "IFS_CACHE_TTL" ) ?: "" };
-	if( !eCacheTTL.empty() )
+	if( !eCacheTTL.empty() ) {
 		cCacheTTL = eCacheTTL.c_str();
+		LogInfo( "Environment Config: IFS_CACHE_TTL = %s", cCacheTTL );
+	}
+	
+	std::string eInfServerMaxRequestsNumber{ getenv( "IFS_CORE_MAX_REQUESTS_NUMBER" ) ?: "" };
+	if( !eInfServerMaxRequestsNumber.empty() ) {
+		cInfServerMaxRequestsNumber = eInfServerMaxRequestsNumber.c_str();
+		LogInfo( "Environment Config: IFS_CORE_MAX_REQUESTS_NUMBER = %s", cInfServerMaxRequestsNumber );
+	}
 
 	// Настройка логгера.
 	if( cLogIdentificator )
@@ -1598,7 +1612,7 @@ int main( int argc, char ** argv )
 
 
 	// Set limit for requests number that could be processed by one process.
-	int MaxRequestsNumber = 10000;
+	int MaxRequestsNumber = 100;
 
 	char * end = nullptr;
 	if( cInfServerMaxRequestsNumber )
@@ -1606,8 +1620,8 @@ int main( int argc, char ** argv )
 		MaxRequestsNumber = strtol( cInfServerMaxRequestsNumber, &end, 10 );
 		if( ( end && *end ) || MaxRequestsNumber < 1 )
 		{
-			LogWarn( "Invalid record value in config file: [InfServer] MaxRequestsNumber. Set default value: \"10000\"." );
-			MaxRequestsNumber = 10000;
+			LogWarn( "Invalid record value in config file: [InfServer] MaxRequestsNumber. Set default value: \"100\"." );
+			MaxRequestsNumber = 100;
 		}
 	}
 
@@ -1619,7 +1633,7 @@ int main( int argc, char ** argv )
 		TimeOut = strtol( cInfServerTimeOut, &end, 10 );
 		if( ( end && *end ) || TimeOut < 0 )
 		{
-			LogWarn( "Invalid record value in config file: [InfServer] MaxRequestsNumber. Set default value: \"30\"." );
+			LogWarn( "Invalid record value in config file: [InfServer] Timeout. Set default value: \"30\"." );
 			TimeOut = 30;
 		}
 	}

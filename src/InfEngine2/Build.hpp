@@ -6,7 +6,7 @@
 /** Configuration */
 
 /** InfEngine release information. */
-#define InfEngineReleaseVersion "1.8.4s"
+#define InfEngineReleaseVersion "1.8.5s"
 
 #ifdef __FreeBSD__
 

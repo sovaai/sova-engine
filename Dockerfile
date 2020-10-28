@@ -44,6 +44,7 @@ COPY --from=engine-compiler-10 /src/docker/start.sh /scripts/
 ADD docker/syslog/rsyslog.conf /etc/rsyslog.conf
 
 RUN ln -s /engine /usr/local/InfEngine && \
-    ln -sf /dev/stdout /var/log/syslog
+    ln -sf /dev/stdout /var/log/syslog && \
+    echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
 
 CMD /scripts/start.sh || cat /usr/local/InfEngine/logs/InfEngine.log

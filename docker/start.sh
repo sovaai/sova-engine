@@ -1,9 +1,13 @@
 #!/bin/bash
 
+# Save environment variables.
+mkdir -p ~/.ssh &&
+chmod 700 ~/.ssh &&
+env | grep '^IFS_' > /root/.ssh/environment &&
+
 # Start sshd.
 if [[ -n "$SSHD_ENABLE" ]]; then
     if [[ -n "$SSHD_AUTHORIZED_KEYS" ]]; then
-        mkdir -p ~/.ssh && chmod 700 ~/.ssh &&
         echo "$SSHD_AUTHORIZED_KEYS" >> ~/.ssh/authorized_keys &&
         chmod 600 ~/.ssh/authorized_keys
     fi &&
